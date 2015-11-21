@@ -1,0 +1,2 @@
+exec feh -g 1920x1080 -R 3 -D 3 -- /opt/announcements
+

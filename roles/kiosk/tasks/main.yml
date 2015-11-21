@@ -1,0 +1,9 @@
+---
+- name: Create a kiosk user
+  user: name=kiosk
+
+- name: Install xinitrc
+  copy: src=xinitrc dest=/home/kiosk/.xinitrc owner=kiosk group=kiosk mode=0750
+
+- name: Install reboot cron
+  copy: src=startup /etc/cron.d/startup owner=root group=root mode=0750

@@ -3,7 +3,8 @@
   gather_facts: true
 
 - hosts: utility
-  sudo: yes
+  become: yes
+  become_method: sudo
   roles:
   - base
   - exim4

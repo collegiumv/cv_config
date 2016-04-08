@@ -1,5 +1,6 @@
 ---
 - hosts: nas
-  sudo: yes
+  become: yes
+  become_method: sudo
   roles:
   - nas

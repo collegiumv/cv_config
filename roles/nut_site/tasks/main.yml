@@ -1,6 +1,9 @@
 ---
 - name: Install Dependencies
   apt: pkg=nut-cgi state=present
+  with_items:
+    - nut-cgi
+    - fcgiwrap
 
 - name: Create nut DocumentRoot
   file: path=/var/www/nut state=directory owner=root group=root mode=0755
@@ -8,15 +11,15 @@
 - name: Install nut site
   copy: src=index.html dest=/var/www/nut/index.html owner=root group=root mode=0644
 
-- name: Configure apache for nut-cgi
-  copy: src=nut.conf dest=/etc/apache2/sites-available/nut.conf owner=root group=root mode=0644
+- name: Configure nginx for nut-cgi
+  copy: src=nut.conf dest=/etc/nginx/sites-available/nut.conf owner=root group=root mode=0644
   notify:
-  - apache2
+  - nginx
 
 - name: Enable nut site
-  file: src=../sites-available/nut.conf dest=/etc/apache2/sites-enabled/nut.conf state=link
+  file: src=../sites-available/nut.conf dest=/etc/nginx/sites-enabled/nut.conf state=link
   notify:
-  - apache2
+  - nginx
 
 - name: Configure nut-cgi
   copy: src=hosts.conf dest=/etc/nut/hosts.conf owner=root group=root mode=0644

@@ -12,3 +12,6 @@
 
 - name: Create sites-enabled
   file: path=/etc/nginx/sites-enabled state=directory owner=root group=root mode=0755
+
+- name: Enable nginx
+  file: src=/etc/sv/nginx dest=/var/service/nginx state=link owner=root group=root

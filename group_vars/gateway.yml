@@ -231,7 +231,7 @@ cv_hosts:
       out:
         - proto: tcp
           dest: any
-          port: "{80 443 5222 6667 6697}"
+          port: "{22 80 443 5222 6667 6697}"
     visible_to:
       - cv-byod
   - name: nitrogen

@@ -1,0 +1,4 @@
+---
+icinga2_dbuser: icinga
+icinga2_dbhost: localhost
+icinga2_db: icinga

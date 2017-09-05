@@ -1,0 +1,52 @@
+---
+- name: Install icinga2
+  xbps:
+    pkg:
+      - icinga2
+      - monitoring-plugins
+    state: present
+
+- name: Create icinga2 postgres user
+  postgresql_user:
+    name: '{{ icinga2_dbuser }}'
+    password: '{{ icinga2_dbpassword }}'
+  become_user: postgres
+
+- name: Create icinga2 postgresql database
+  postgresql_db:
+    name: '{{ icinga2_db }}'
+    owner: '{{ icinga2_dbuser }}'
+  become_user: postgres
+
+- name: Configure icinga2 postgres access
+  blockinfile:
+    path:  /var/lib/postgresql/data/pg_hba.conf
+    insertafter: '# TYPE.*'
+    block: |
+      # icinga
+      local   icinga      icinga                            md5
+      host    icinga      icinga      127.0.0.1/32          md5
+      host    icinga      icinga      ::1/128               md5
+  register: icinga2_perms
+
+- name: Restart postgresql
+  runit:
+    name: postgresql
+    state: restarted
+  when: icinga2_perms
+
+- name: Import icinga2 postgresql scheme
+  shell: PGPASSWORD={{ icinga2_dbpassword }} psql -U {{ icinga2_dbuser }} -d {{ icinga2_db }} < /usr/share/icinga2-ido-pgsql/schema/pgsql.sql
+  become_user: postgres
+  register: icinga2_psql
+  changed_when: not 'already exists' in icinga2_psql.stderr
+
+- name: Configure icinga2 ido postgresql
+  template:
+    src: ido-pgsql.conf.j2
+    dest: /etc/icinga2/features-available/ido-pgsql.conf
+    owner: icinga
+    group: icinga
+    mode: 0644
+  notify:
+    - icinga2

@@ -1,0 +1,5 @@
+---
+- name: icinga2
+  runit:
+    name: icinga2
+    state: restarted

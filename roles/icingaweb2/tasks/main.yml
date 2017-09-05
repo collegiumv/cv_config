@@ -1,0 +1,6 @@
+---
+- name: Download icingaweb2
+  repo: https://github.com/Icinga/icingaweb2.git
+  dest: /usr/share/icingaweb2
+  version: "{{ icingaweb2_version }}"
+

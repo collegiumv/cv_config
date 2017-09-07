@@ -8,7 +8,7 @@ objectClass: olcDatabaseConfig
 olcDatabase: {0}config
 exact: olcSyncRepl
 {% for dc in groups['dc'] %}
-olcSyncRepl: {{ '{' }}{{ loop.index-1 }}{{ '}' }}rid=00{{ loop.index-1 }} provider="ldap://{{ hostvars[dc]['ansible_fqdn'] }}" binddn="cn=config" bindmethod=simple credentials="{{ slapd_olcRootPW }}" searchbase="cn=config" type=refreshAndPersist retry="5 5 120 +" timeout=3
+olcSyncRepl: {{ '{' }}{{ loop.index-1 }}{{ '}' }}rid=00{{ loop.index-1 }} provider="ldap://{{ dc }}" binddn="cn=config" bindmethod=simple credentials="{{ slapd_olcRootPW }}" searchbase="cn=config" type=refreshAndPersist retry="5 5 120 +" timeout=3
 {% endfor %}
 olcMirrorMode: TRUE
 {% endif %}

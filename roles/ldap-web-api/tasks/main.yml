@@ -2,6 +2,7 @@
 - name: Install dependencies
   xbps:
     pkg:
+      - git
       - python-ldap
       - python-Flask
       - uwsgi
@@ -32,13 +33,11 @@
     system: true
 
 - name: Install daemon
-  copy:
-    src: ldap-web-api
-    dest: /opt
-    owner: root
-    group: root
-    mode: 0644
-    directory_mode: 0755
+  git:
+    repo: https://github.com/collegiumv/ldap-web-api.git
+    dest: /opt/ldap-web-api
+    version: 1524d18
+    umask: "0022"
 
 - name: Install service file (1/2)
   file:

@@ -1,4 +1,10 @@
 ---
+- name: Install dependencies
+  xbps:
+    pkg:
+      - git
+    state: present
+
 - name: Create site directory
   file:
     path: /var/www/welcome
@@ -7,13 +13,12 @@
     group: root
     mode: 0755
 
-- name: Copy site contents
-  copy:
-    src: welcome/
+- name: Install site contents
+  git:
+    repo: https://github.com/collegiumv/cv_welcome.git
     dest: /var/www/welcome
-    owner: root
-    group: root
-    mode: 0755
+    version: 813480e
+    umask: "0022"
 
 - name: Correct Site Permissions
   file:

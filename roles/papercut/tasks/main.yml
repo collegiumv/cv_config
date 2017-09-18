@@ -132,6 +132,7 @@
     - pc-connection-monitor
     - pc-event-monitor
     - papercut
+    - web-print
 
 - name: Copy PaperCut service scripts
   copy:
@@ -144,6 +145,7 @@
     - pc-connection-monitor
     - pc-event-monitor
     - papercut
+    - web-print
 
 - name: Enable the PaperCut services
   runit:
@@ -154,3 +156,4 @@
     - pc-connection-monitor
     - pc-event-monitor
     - papercut
+    - web-print

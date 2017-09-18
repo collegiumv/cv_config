@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /home/papercut/providers/web-print/linux-x64/
+exec chpst -u papercut:papercut ./pc-web-print

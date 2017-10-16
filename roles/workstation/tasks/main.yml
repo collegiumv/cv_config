@@ -43,6 +43,7 @@
       - gdb
       - ghc
       - git-all
+      - nodejs
       - openjdk
       - R
       - racket

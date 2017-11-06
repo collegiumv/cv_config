@@ -1,0 +1,6 @@
+---
+- name: imodules
+  command: gtk-query-immodules-{{ item }} --update-cache
+  with_items:
+    - 2.0
+    - 3.0

@@ -98,6 +98,14 @@
       - iscan-plugin-gt-s650
     state: present
 
+- name: Install ibus keyboards
+  xbps:
+    pkg:
+      - ibus-hangul
+      - ibus-mozc
+    state: present
+  notify: imodules
+
 - name: Install additional misc. programs
   xbps:
     pkg:

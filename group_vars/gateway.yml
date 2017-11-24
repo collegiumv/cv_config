@@ -81,9 +81,7 @@ sg_networks:
         nat_to: carp1
         mode: manual
         autonat:
-          - 192.168.42.20/30
-          - 192.168.42.32/27
-          - 192.168.42.224/27
+          - 192.168.42.0/24
     hosts: "{{ cv_hosts }}"
   - name: cv-byod
     desc: Internal network for personal devices
@@ -342,6 +340,19 @@ cv_hosts:
     dns:
       CNAME:
         - p
+    pf:
+      out:
+        - proto: "{tcp udp}"
+          dest: any
+          port: any
+  - name: tungsten
+    desc: AWX
+    mac: B0:83:FE:8E:B5:A1
+    addr: 192.168.42.66
+    dns:
+      CNAME:
+        - w
+        - awx
     pf:
       out:
         - proto: "{tcp udp}"

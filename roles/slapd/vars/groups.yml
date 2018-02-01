@@ -28,14 +28,13 @@ slapd_groups:
     gidNumber: 1337
     members:
       - harpham
-      - maldridge
       - kulinacs
 
   - name: Local Admins
     gidNumber: 9271
     members:
       - Fhqwhgads
-      - dangerontheranger
+      - kusoTTK
 
   - name: Server Admins
     gidNumber: 1336
@@ -67,7 +66,6 @@ slapd_groups:
     members:
       - kusoTTK
       - Fhqwhgads
-      - dangerontheranger
 
   - name: Honors College Staff
     gidNumber: 1350
@@ -77,6 +75,7 @@ slapd_groups:
       - pxm166330
       - sheila.kelly
       - vbrunell
+      - jkreuter
 
   - name: Jira Users
     gidNumber: 1355

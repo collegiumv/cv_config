@@ -19,3 +19,5 @@ rsyslog_remote: nitrogen.collegiumv.org
 telegraf_influxdb_remote: oxygen.collegiumv.org
 telegraf_influxdb_db: collegiumv
 telegraf_influxdb_password: "{{ lookup('file', 'secret/influxdb_telegraf') }}"
+
+network_output_policy: ACCEPT

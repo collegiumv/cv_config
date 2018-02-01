@@ -241,6 +241,7 @@ cv_hosts:
         - accounts
         - constellation
         - irc
+        - jira
         - ldap-api
         - doc
         - paper
@@ -280,7 +281,6 @@ cv_hosts:
     dns:
       CNAME:
         - o
-        - jira
     pf:
       out:
         - proto: tcp

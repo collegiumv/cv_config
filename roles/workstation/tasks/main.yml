@@ -12,6 +12,8 @@
 - name: Install graphics libraries
   xbps:
     pkg:
+      - libpng12-32bit
+      - libtxc_dxtn-32bit
       - libXrandr-32bit
       - libXt-32bit
       - libXxf86vm-32bit

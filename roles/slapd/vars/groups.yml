@@ -60,6 +60,11 @@ slapd_groups:
       - sab160230
       - kulinacs
       - fhtraylor
+      - Youth4Christ
+      - timothyshyu
+      - elizabethding
+      - nga.vu
+      - axm165131
 
   - name: Media Admins
     gidNumber: 1345

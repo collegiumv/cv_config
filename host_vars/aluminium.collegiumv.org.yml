@@ -1,4 +1,24 @@
 ---
+network_interfaces:
+  - name: default
+    mode: static
+    mode6: disabled
+    resolvermode: static
+    routers:
+      - 192.168.42.3
+    resolvers:
+      - 192.168.42.3
+  - name: enp3s0
+    mode: static
+    mode6: disabled
+    resolvermode: static
+    addresses:
+      - 192.168.43.20/24
+    routers:
+      - 192.168.43.1
+    resolvers:
+      - 192.168.43.1
+
 monitor_UPS:
   primary:
     ID: primary

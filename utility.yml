@@ -10,7 +10,6 @@
     - core-programs
     - sshd
     - cv-netkeys
-    - inspircd
     - acmetool
     - account_site
     - doc_site

@@ -1,5 +1,6 @@
 ---
-# cups role will not be run, as we are currently managing it by hand until we switch to a containerized environment
+# cups role will not be run, as we are currently managing it by hand
+# until we switch to a containerized environment
 - hosts: print
   become: true
   become_method: sudo

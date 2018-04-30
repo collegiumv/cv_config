@@ -62,9 +62,9 @@ slapd_groups:
       - fhtraylor
       - Youth4Christ
       - timothyshyu
-      - elizabethding
       - nga.vu
       - axm165131
+      - Shiva7777
 
   - name: Media Admins
     gidNumber: 1345

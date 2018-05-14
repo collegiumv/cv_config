@@ -29,6 +29,7 @@ slapd_groups:
     members:
       - harpham
       - kulinacs
+      - tristandhill
 
   - name: Local Admins
     gidNumber: 9271

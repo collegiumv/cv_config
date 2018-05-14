@@ -277,7 +277,7 @@ cv_hosts:
   - name: oxygen
     desc: Monitoring
     mac: 00:22:19:27:e2:d5
-    addr: 192.168.42.8
+    addr: 192.168.42.11
     dns:
       CNAME:
         - o
@@ -309,7 +309,7 @@ cv_hosts:
   - name: sodium
     desc: Print Server
     mac: 00:22:19:24:4b:1f
-    addr: 192.168.42.11
+    addr: 192.168.42.8
     dns:
       CNAME:
         - na

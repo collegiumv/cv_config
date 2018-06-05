@@ -17,7 +17,7 @@
   git:
     repo: https://github.com/collegiumv/cv_welcome.git
     dest: /var/www/welcome
-    version: 813480e
+    version: fc0eb6c
     umask: "0022"
 
 - name: Correct Site Permissions

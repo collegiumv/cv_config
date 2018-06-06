@@ -12,12 +12,6 @@ acmetool:
     - site: paper.collegiumv.org
       names:
         - paper.collegiumv.org
-    - site: irc.collegiumv.org
-      names:
-        - irc.collegiumv.org
-    - site: jira.collegiumv.org
-      names:
-        - jira.collegiumv.org
 
   hostmaster_email: cvadmins@utdallas.edu
 

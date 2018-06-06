@@ -15,4 +15,3 @@
     - influxdb
     - telegraf
     - chronograf
-    - jira

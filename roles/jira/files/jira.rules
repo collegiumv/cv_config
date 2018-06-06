@@ -1,3 +1,0 @@
-*filter
--A OUTPUT -p tcp --dport 443 -j ACCEPT
-COMMIT

@@ -1,5 +1,0 @@
----
-dependencies:
-  - { role: 'network' }
-  - { role: 'nginx' }
-  - { role: 'postgresql' }

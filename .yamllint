@@ -13,10 +13,8 @@ ignore: |
   sshd
   upsmon
   xorg
-  roles/inspircd/vars/main.yml
   roles/make_keytab/tasks/main.yml
   roles/papercut/tasks/main.yml
-  roles/jira/tasks/main.yml
 
 rules:
   braces:

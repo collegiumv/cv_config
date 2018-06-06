@@ -12,11 +12,9 @@ sg_globalconf:
     - 10.180.14.69
   boothosts:
     - { name: constellation.collegiumv.org, ip: 192.168.42.7 }
-    - { name: madhax.net, ip: 209.236.123.144 }
     - { name: mirror.esc7.net, ip: 72.53.191.10 }
     - { name: navobs1.wustl.edu, ip: 128.252.19.1 }
     - { name: ntp.okstate.edu, ip: 139.78.135.14 }
-    - { name: omgpwned.net, ip: 76.185.189.253 }
     - { name: lug.utdallas.edu, ip: 129.110.92.80 }
     - { name: smtp.utdallas.edu, ip: 10.180.14.116 }
     - { name: smtp.utdallas.edu, ip: 10.182.71.121 }
@@ -46,7 +44,6 @@ sg_globalconf:
       - tick.uh.edu
       - ntp.okstate.edu
       - navobs1.wustl.edu
-      - omgpwned.net
 
 sg_networks:
   - name: cv-proper
@@ -240,12 +237,9 @@ cv_hosts:
         - account
         - accounts
         - constellation
-        - irc
-        - jira
         - ldap-api
         - doc
         - paper
-        - pasta
         - pkgs
         - repo
         - welcome
@@ -257,9 +251,6 @@ cv_hosts:
           to: carp2
           port: "{22 80 443 6667 6697 7070 8080}"
       out:
-        - proto: tcp
-          dest: madhax.net
-          port: 7700
         - proto: tcp
           dest: smtp.utdallas.edu
           port: 25

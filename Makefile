@@ -4,13 +4,9 @@ SECRETS_DIR = secret
 
 SECRET_TARGETS = ${PLAIN_SECRETS} \
 	constellation_cert \
-	inspircd_cert \
-	inspircd_inspircd_power_diepass inspircd_inspircd_power_restartpass inspircd_opers \
 
 PLAIN_SECRETS = account_salt \
 	constellation_dbpassword \
-	inspircd_links_madhax_recvpass inspircd_links_madhax_sendpass \
-	inspircd_modules_cloak_key \
 	krb_db_enc_pass kdcAdmin_pass \
 	nas_rsyncd_passwd \
 	nut_monitor_passwd \
@@ -89,15 +85,3 @@ certreq:
 
 constellation_cert:
 	${MAKE} role=constellation fqdn=constellation.collegiumv.org certreq
-
-inspircd_cert:
-	${MAKE} role=inspircd fqdn=irc.collegiumv.org certreq
-
-inspircd_inspircd_power_diepass:
-	./inspircd_hmac "Password to shutdown the IRC server: " > ${SECRETS_DIR}/inspircd_inspircd_power_diepass
-
-inspircd_inspircd_power_restartpass:
-	./inspircd_hmac "Password to restart the IRC server: " > ${SECRETS_DIR}/inspircd_inspircd_power_restartpass
-
-inspircd_opers:
-	./inspircd_opers > ${SECRETS_DIR}/inspircd_opers.yml

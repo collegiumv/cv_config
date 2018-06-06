@@ -1,3 +1,0 @@
----
-- name: inspircd
-  command: sv restart inspircd

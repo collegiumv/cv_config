@@ -58,6 +58,16 @@
       - uwsgi-python3
     state: present
 
+- name: Install Django
+  pip:
+    name: django
+    version: 1.11.13
+    state: present
+    virtualenv: /opt/constellation/venv
+    virtualenv_python: python3
+  become: true
+  become_user: constellation
+
 - name: Install Python Dependencies
   pip:
     name:

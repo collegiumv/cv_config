@@ -58,40 +58,18 @@
       - uwsgi-python3
     state: present
 
-- name: Install Django
-  pip:
-    name: django
-    version: 1.11.13
-    state: present
-    virtualenv: /opt/constellation/venv
-    virtualenv_python: python3
-  become: true
-  become_user: constellation
-
 - name: Install Python Dependencies
   pip:
     name:
+      - django
       - django-auth-ldap
       - pyldap
       - psycopg2
-      - Constellation-Base
     state: latest
     virtualenv: /opt/constellation/venv
     virtualenv_python: python3
   become: true
   become_user: constellation
-
-- name: Install Constellation Modules
-  pip:
-    name: "{{ item.url | default(item.name) }}"
-    state: present
-    virtualenv: /opt/constellation/venv
-    virtualenv_python: python3
-  with_items: "{{ ConstellationApps }}"
-  become: true
-  become_user: constellation
-  loop_control:
-    label: "{{ item.name }}"
 
 - name: Create Constellation Configuration Directory
   file:
@@ -100,6 +78,24 @@
     owner: root
     group: root
     mode: 0755
+
+- name: Download Constellation Modules
+  git:
+    repo: "{{ item.repo }}"
+    dest: "/opt/constellation/{{ item.name }}"
+    umask: "0022"
+  with_items: "{{ ConstellationModules }}"
+  become: true
+  become_user: constellation
+
+- name: Install Constellation Modules
+  file:
+    src: "/opt/constellation/{{ item.name }}/{{ item.path }}"
+    dest: "/opt/constellation/{{ item.path }}"
+    state: link
+  with_items: "{{ ConstellationModules }}"
+  become: true
+  become_user: constellation
 
 - name: Install Dynamic Constellation Site Settings
   template:

@@ -93,6 +93,7 @@
     src: "/opt/constellation/{{ item.name }}/{{ item.path }}"
     dest: "/opt/constellation/{{ item.path }}"
     state: link
+    force: yes
   with_items: "{{ ConstellationModules }}"
   become: true
   become_user: constellation

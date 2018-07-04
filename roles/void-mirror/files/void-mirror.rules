@@ -1,3 +1,3 @@
 *filter
--A OUTPUT -p tcp -d 129.110.92.80 --dport 873 -j ACCEPT
+-A OUTPUT -p tcp -d 204.93.249.148 --dport 873 -j ACCEPT
 COMMIT

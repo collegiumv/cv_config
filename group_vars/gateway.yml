@@ -15,7 +15,7 @@ sg_globalconf:
     - { name: mirror.esc7.net, ip: 72.53.191.10 }
     - { name: navobs1.wustl.edu, ip: 128.252.19.1 }
     - { name: ntp.okstate.edu, ip: 139.78.135.14 }
-    - { name: lug.utdallas.edu, ip: 129.110.92.80 }
+    - { name: mirrors.servercentral.com, ip: 204.93.249.148 }
     - { name: smtp.utdallas.edu, ip: 10.180.14.116 }
     - { name: smtp.utdallas.edu, ip: 10.182.71.121 }
     - { name: tick.uh.edu, ip: 129.7.1.66 }
@@ -258,7 +258,7 @@ cv_hosts:
           dest: any
           port: "{80 443}"
         - proto: tcp
-          dest: lug.utdallas.edu
+          dest: mirrors.servercentral.com
           port: 873
         - proto: tcp
           dest: 129.110.0.0/16

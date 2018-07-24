@@ -35,14 +35,6 @@
     mode: 0750
     state: directory
 
-- name: Install sync secret
-  copy:
-    src: secret/void_mirror.sync
-    dest: /etc/void-mirror/sync.secret
-    owner: reposync
-    group: reposync
-    mode: 0600
-
 - name: Install sync service (1/2)
   file:
     path: /etc/sv/void-mirror

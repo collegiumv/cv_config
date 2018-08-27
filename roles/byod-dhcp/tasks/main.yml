@@ -28,8 +28,8 @@
 - name: Insert Key in cronjob
   replace:
     path: /etc/crontab.d/dhcpd-updater.crontab
-    regexp: 'show/all/'
-    replace: "show/all/{{ lookup('file', 'secret/constellation_showdeviceskey') }}"
+    regexp: 'show/all/ '
+    replace: "show/all/{{ lookup('file', 'secret/constellation_showdeviceskey') }} "
 
 - name: Install pf Rules
   copy:

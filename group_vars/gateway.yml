@@ -41,9 +41,7 @@ sg_globalconf:
           - 10.180.14.69
   ntp:
     clocks:
-      - tick.uh.edu
-      - ntp.okstate.edu
-      - navobs1.wustl.edu
+      - pool.ntp.org
 
 sg_networks:
   - name: cv-proper

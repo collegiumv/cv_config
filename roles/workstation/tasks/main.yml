@@ -298,3 +298,9 @@
   with_items:
     - consolekit
     - cgmanager
+
+- name: Fix default backgrounds
+  file:
+    src: /usr/share/backgrounds/gnome/
+    dest: /usr/share/themes/Adwaita/backgrounds
+    state: link

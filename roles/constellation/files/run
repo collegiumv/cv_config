@@ -1,6 +1,0 @@
-#!/bin/sh
-
-cd /opt/constellation/
-. ./venv/bin/activate
-
-exec chpst -u constellation:constellation:nginx uwsgi --die-on-term /opt/constellation/uwsgi.ini

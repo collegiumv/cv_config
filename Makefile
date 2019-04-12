@@ -2,11 +2,9 @@
 
 SECRETS_DIR = secret
 
-SECRET_TARGETS = ${PLAIN_SECRETS} \
-	constellation_cert \
+SECRET_TARGETS = ${PLAIN_SECRETS}
 
 PLAIN_SECRETS = account_salt \
-	constellation_dbpassword \
 	krb_db_enc_pass kdcAdmin_pass \
 	nas_rsyncd_passwd \
 	nut_monitor_passwd \
@@ -83,5 +81,3 @@ certreq:
 	rm ${role}_cert.conf
 	@tput setaf 1 0 0 && echo "Follow the steps at https://www.utdallas.edu/infosecurity/DigitalCertificates_SSL.html and put the resulting key at ${SECRETS_DIR}/${role}_cert.pem" && tput sgr0
 
-constellation_cert:
-	${MAKE} role=constellation fqdn=constellation.collegiumv.org certreq

@@ -1,1 +1,0 @@
-*/5 * * * * root /usr/local/sbin/openbsd-dhcpd-supervisor https://constellation.collegiumv.org/devices/api/v1/device/show/all/ /etc/dhcpd.conf.d/15-user-macs /usr/local/sbin/dhcpd-reconf >/dev/null 2>&1

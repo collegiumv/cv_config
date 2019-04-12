@@ -1,7 +1,0 @@
-#!/bin/sh
-
-cd /opt/constellation
-. ./venv/bin/activate
-
-echo -n yes | python -m django collectstatic --settings constellation.settings
-chmod -R ugo+rX static_root

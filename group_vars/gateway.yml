@@ -11,7 +11,6 @@ sg_globalconf:
     - 10.180.15.160
     - 10.180.14.69
   boothosts:
-    - { name: constellation.collegiumv.org, ip: 192.168.42.7 }
     - { name: mirror.esc7.net, ip: 72.53.191.10 }
     - { name: navobs1.wustl.edu, ip: 128.252.19.1 }
     - { name: ntp.okstate.edu, ip: 139.78.135.14 }
@@ -234,7 +233,6 @@ cv_hosts:
         - n
         - account
         - accounts
-        - constellation
         - ldap-api
         - doc
         - paper

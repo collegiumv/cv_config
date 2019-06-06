@@ -106,6 +106,7 @@
       - fuse-exfat
       - gnome-screenshot
       - gnupg2
+      - gnuplot
       - google-fonts-ttf
       - htop
       - keepassx2
